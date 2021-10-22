@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-mailclient",
+  "version": "0.0.2",
+  "description": "mailclients for all api's in market",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "shivapendem",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivapendem/mailclient.git"
+  },
+  "keywords": [
+    "mailclient"
+  ],
+  "bugs": {
+    "url": "https://github.com/shivapendem/mailclient/issues"
+  },
+  "homepage": "https://github.com/shivapendem/mailclient#readme"
+}
