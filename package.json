@@ -1,6 +1,6 @@
 {
   "name": "nodejs-mailclient",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "mailclients for all api's in market",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,7 @@
     "mailclient",
     "Emailclient",
     "Emailnode",
-    "shivapendem",
-    
+    "shivapendem"    
   ],
   "bugs": {
     "url": "https://github.com/shivapendem/mailclient/issues"

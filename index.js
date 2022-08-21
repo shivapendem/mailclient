@@ -37,6 +37,45 @@ function sendemailfromelasticemail(to,subject,textcontent,htmlcontent,apikey,fro
     req.write(data1)
     req.end()
 }
+function sendemailfromAWSSES()
+{
+  var ses = require('node-ses')
+    , client = ses.createClient({key: 'key', secret: 'secret'});
+  client.sendEmail({
+     to: 'aaron.heckmann+github@gmail.com'
+   , from: 'somewhereOverTheR@inbow.com'
+   , cc: 'theWickedWitch@nerds.net'
+   , bcc: ['canAlsoBe@nArray.com', 'forrealz@.org']
+   , subject: 'greetings'
+   , message: 'your <b>message</b> goes here'
+   , altText: 'plain text'
+  }, function (err, data, res) {
+   // ...
+  });
+}
+
+function sendemailfromSendGrid()
+{
+  const sgMail = require('@sendgrid/mail');
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const msg = {
+    to: 'test@example.com',
+    from: 'test@example.com', // Use the email address or domain you verified above
+    subject: 'Sending with Twilio SendGrid is Fun',
+    text: 'and easy to do anywhere, even with Node.js',
+    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+  };
+  sgMail
+    .send(msg)
+    .then(() => {}, error => {
+      console.error(error);
+
+      if (error.response) {
+        console.error(error.response.body)
+      }
+    });
+}
+
 
 module.exports = {
 	sendemailfromelasticemail
