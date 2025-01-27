@@ -1,10 +1,13 @@
 const https = require('https');
-
+this.urlencodestring = function (query) {
+		if (isEmptyOrNull(query)) return query;
+		return encodeURIComponent(query).replace(/'/g, "%27").replace(/"/g, "%22");
+	};
 function sendemailfromelasticemail(to,subject,textcontent,htmlcontent,apikey,fromname,fromemail,replyTo)
 {
-	var body = '';
+	  var body = '';
     console.log("email sent to "+to+" with subject "+subject);
-    const data1="apikey="+apikey+"&&subject="+subject+"&fromName="+fromname+"&&from="+fromemail+"&to="+to+"&bodyHtml="+htmlcontent+"&bodyText="+textcontent+"&replyTo="+replyTo;
+    const data1="apikey="+apikey+"&&subject="+subject+"&fromName="+fromname+"&&from="+fromemail+"&to="+to+"&bodyHtml="+urlencodestring(htmlcontent)+"&bodyText="+urlencodestring(textcontent)+"&replyTo="+replyTo;
     const options = {
       hostname: 'api.elasticemail.com',
       port: 443,

@@ -1,6 +1,6 @@
 {
   "name": "nodejs-mailclient",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "mailclients for all api's in market",
   "main": "index.js",
   "scripts": {
